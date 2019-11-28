@@ -1,0 +1,14 @@
+.image{
+  width: 20%;
+  height: 10%;
+  
+
+}
+<div class="media">
+                    <img src="C:\Users\admin\Desktop\BootStrap\Assignment2\photo\IMG-20190928-WA0013.jpg" class="rounded-circle" width =20% alt="...">
+                    <div class="media-body">
+                      <h5 class="mt-0">Hi.I'm Shreya sharma</h5>
+                      And this is Miniport,a free, fully response <br>
+                      designed by Aj for HTML5 UP & released <br>
+                      under the CCA license  </div>
+                  </div>

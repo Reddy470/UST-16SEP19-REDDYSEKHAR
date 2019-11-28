@@ -1,0 +1,23 @@
+package com.ustglobal.phonesimulation.dto;
+
+public class ContactBean {
+	
+	private String name;
+	private long number;
+	private  String groups;
+	
+	
+	
+	public ContactBean(String name, long number, String groups) {
+		super();
+		name = name;
+		this.number = number;
+		this.groups = groups;
+	}
+
+
+
+	
+	
+
+}

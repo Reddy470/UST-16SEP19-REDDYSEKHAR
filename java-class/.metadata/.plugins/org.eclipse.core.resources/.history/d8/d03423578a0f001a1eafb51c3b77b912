@@ -1,0 +1,5 @@
+package com.ustglobal.phonesimulation.dao;
+
+public class ContactDaoImpl {
+
+}

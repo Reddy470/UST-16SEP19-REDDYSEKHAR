@@ -1,0 +1,54 @@
+package com.ustglobal.phonesimulation.dao;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.TreeSet;
+
+import com.ustglobal.phonesimulation.dto.ContactBean;
+
+
+public class ContactList {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		LinkedHashSet<ContactBean> ts = new LinkedHashSet<ContactBean>();
+		ContactBean cb1 = new ContactBean("reddy", 9100169, "ust");
+		ContactBean cb2 = new ContactBean("Sekhar", 6300566, "ust");
+		ContactBean cb3 = new ContactBean("sushmi", 897800, "family");
+		ContactBean cb4 = new ContactBean("mohan", 856677, "family");
+		ContactBean cb5 = new ContactBean("yeshu", 9100154, "friend");
+		ContactBean cb6 = new ContactBean("navvu", 9456783, "friend");
+		ContactBean cb7 = new ContactBean("priya", 9347313, "family");
+		
+		ts.add(cb1);
+		ts.add(cb2);
+		ts.add(cb3);
+		ts.add(cb4);
+		ts.add(cb5);
+		ts.add(cb6);
+		ts.add(cb7);
+		
+		
+		Iterator<ContactBean> it = ts.iterator();
+		while (it.hasNext()) {
+		ContactBean e = it.next();
+			System.out.println("Name Is "+e.name);
+			System.out.println("Id Is "+e.number);
+			System.out.println("height Is "+e.groups);
+			System.out.println("===============================");
+		}
+			
+	}
+	
+	}
+	
+
+
+	
+
+

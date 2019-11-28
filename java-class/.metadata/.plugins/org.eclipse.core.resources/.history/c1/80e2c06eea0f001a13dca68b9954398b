@@ -1,0 +1,168 @@
+package com.ustglobal.phonesimulation.dao;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+import com.ustglobal.phonesimulation.dto.ContactBean;
+import com.ustglobal.phonesimulation.util.ContactManger;
+
+
+public class ContactList {
+
+
+	public static void main(String[] args) {
+
+
+
+		LinkedHashSet<ContactBean> ts = new LinkedHashSet<ContactBean>();
+		ContactBean cb1 = new ContactBean("reddy", 9100169, "ust");
+		ContactBean cb2 = new ContactBean("Sekhar", 6300566, "ust");
+		ContactBean cb3 = new ContactBean("sushmi", 897800, "family");
+		ContactBean cb4 = new ContactBean("mohan", 856677, "family");
+		ContactBean cb5 = new ContactBean("yeshu", 9100154, "friend");
+		ContactBean cb6 = new ContactBean("navvu", 9456783, "friend");
+		ContactBean cb7 = new ContactBean("priya", 9347313, "family");
+
+		ts.add(cb1);
+		ts.add(cb2);
+		ts.add(cb3);
+		ts.add(cb4);
+		ts.add(cb5);
+		ts.add(cb6);
+		ts.add(cb7);
+
+		System.out.println(" press 1 to show all contacts");
+		System.out.println("press 2 to search contact");
+		System.out.println("press 3 to product operation");
+
+		Scanner sc = new Scanner(System.in);
+		int ch = sc.nextInt();
+
+		switch (ch) {
+		case 1:
+
+			Iterator<ContactBean> it = ts.iterator();
+			while (it.hasNext()) {
+				ContactBean e = it.next();
+				System.out.println("Name Is "+e.name);
+				System.out.println("Number Is "+e.number);
+				System.out.println("Group Is "+e.groups);
+				System.out.println("===============================");
+			}
+			break;
+
+		case 2:
+
+			ContactDao daoSearch = ContactManger.getContactDao();
+			System.out.println("enter the name");
+			String name = sc.next();
+			try {
+				ContactBean bean2 =daoSearch.searchContactData(name);
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+			Scanner scn1 = new Scanner(System.in);
+			int ch1 = scn1.nextInt();
+
+			System.out.println("press 1 to call");
+			System.out.println("press 2 to message");
+			System.out.println(" press 3 go back to main menu");
+
+			switch(ch1) {
+			case 1:
+				
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+
+			}
+		case 3:
+			
+			System.out.println("press 1 to Add");
+			System.out.println("press 2 to Update");
+			System.out.println(" press 3 to Delete");
+
+			Scanner scn2 = new Scanner(System.in);
+			int ch2 = scn2.nextInt();
+
+			
+
+			switch(ch2) {
+			case 1:
+				ContactDao daoadd = ContactManger.getContactDao();
+				Scanner scn = new Scanner(System.in);
+				System.out.println("Enter name");
+				String name1 = scn.next();
+				System.out.println("Enter Number");
+				int number = scn.nextInt();
+				System.out.println("Enter Groups");
+				String groups = scn.next();
+			
+				ContactBean cb = new ContactBean(name1, number, groups);
+				ts.add(cb);
+				System.out.println(cb);
+				System.out.println(" Add sucessfully");
+
+
+				
+				break;
+			case 2:
+				
+				ContactDao daoupdate = ContactManger.getContactDao();
+				Scanner scn4 = new Scanner(System.in);
+				System.out.println("Enter name");
+				String name2 = scn4.next();
+				System.out.println("Enter Number");
+				int number1 = scn4.nextInt();
+				System.out.println("Enter Groups");
+				String groups1 = scn4.next();
+				//LinkedHashSet<ContactBean> ts = new LinkedHashSet<ContactBean>();
+
+				ContactBean cba = new ContactBean(name, number, groups);
+				cb.set(2,"");
+				System.out.println(cb);
+				System.out.println("update sucessfully");
+
+
+				
+				break;
+			case 3:
+				
+				ContactDao daodelet = ContactManger.getContactDao();
+				Scanner scn3 = new Scanner(System.in);
+				System.out.println("Enter name");
+				String name4 = scn3.next();
+				ts.remove(cb1);
+				System.out.println(cb1);
+				System.out.println("delete sucessfully");
+
+
+				
+				break;
+
+			}
+
+
+			break;
+
+
+		}// end for switch
+
+	}//end for main method 
+
+
+}//end for contactlist
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<div _ngcontent-arj-c3 class="col-md-3 float-left">
+    <h3 _ngcontent-arj-c3 class="text-center mt-2">Entertainment News</h3>
+
+    <div _ngcontent-arj-c3="" class="col-md-12 card card-body" *ngFor="let ent of enter">
+      <a  _ngcontent-arj-c3="" href="{{ent.url}}">
+    <img _ngcontent-arj-c3 class="col-md-12 float-left" src="{{ent.urlToImage}}" alt="" class="card-img-top">
+    </a>
+    <h3 _ngcontent-arj-c3 class="col-md-12 float-left">{{ent.title}}</h3>
+    </div>
+</div>
+
+
+<div _ngcontent-arj-c3 class="col-md-6 float-left">
+ <h3 class="text-center mt-2 mb-2">Top News From India </h3 >
+  <div _ngcontent-arj-c3="" class="col-md-12 card card-body"  *ngFor="let new of news">
+      <a href="{{new.url}}">
+    <img  _ngcontent-arj-c3 class="col-md-12 float-left" src="{{new.urlToImage}}" alt="">
+    </a>
+    <h4>{{new.title}}</h4>
+   </div>
+</div>
+
+
+<div _ngcontent-arj-c3 class="col-md-3 float-left">
+    <h3 class="text-center mt-2 mb-2">SportsNews</h3 >
+     <div _ngcontent-arj-c3="" class="col-md-12 card card-body"  *ngFor="let dis of display">
+         <a href="{{dis.url}}">
+       <img  _ngcontent-arj-c3 class="col-md-12 float-left" src="{{dis.urlToImage}}" alt="">
+       </a>
+       <h4>{{dis.title}}</h4>
+      </div>
+   </div>
+   
+   
+   

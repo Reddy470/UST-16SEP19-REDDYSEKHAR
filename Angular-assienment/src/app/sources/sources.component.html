@@ -1,0 +1,19 @@
+
+<select name="" id="" style="width:400px; height: 40px; margin: 0 0 10px 450px;" (change)="getEnt($event)">
+    <option value="bbc-news">BBC News</option>
+   <option value="the-times-of-india" >Times Of India</option>
+    <option value="fox-news">Fox News</option>
+            <option value="espn">ESPN</option>
+            <option value="news24">News24</option>
+             <option value="the-hindu">The Hindu</option>
+                 <option value="usa-today">Usa Today</option>
+            <option value="national-geographic">National Geographic</option>
+              <option value="mirror">Mirror</option>
+        </select><br><br>
+
+        <div class="col-md-4 float-left mt-6 mb-7 card card-body "  *ngFor='let new of entr'>
+            <a href="{{new.url}}"><img src="{{new.urlToImage}}" alt="" style="height: 400px;"></a>
+            <h1 style="height: 200px;">{{new.title}}</h1>
+          </div>
+
+

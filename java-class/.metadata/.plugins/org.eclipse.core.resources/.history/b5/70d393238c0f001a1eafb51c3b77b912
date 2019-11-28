@@ -1,0 +1,42 @@
+package com.ustglobal.phonesimulation.dao;
+
+import java.util.List;
+
+import com.ustglobal.phonesimulation.dto.ContactBean;
+
+public class ContactDaoImpl implements ContactDao {
+
+	@Override
+	public List<ContactBean> ContactDaoData() {
+		ContactBean c = new ContactBean();
+		return null;
+	}
+
+	@Override
+	public ContactBean searchContactData(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int AddContactData(ContactBean bean) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int editContactData(ContactBean bean) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteContactData(String name) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+
+}

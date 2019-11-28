@@ -1,0 +1,5 @@
+10,Reddy,10000,M
+11,venkat,20000,M
+12,Goverdhan,30000,M
+13,Anu,23000,F
+14,Sekhar,22000,M

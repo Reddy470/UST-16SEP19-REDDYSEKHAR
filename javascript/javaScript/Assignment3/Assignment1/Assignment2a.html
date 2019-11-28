@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>primenum</title>
+</head>
+<body>
+    <script>
+        console.log('FUNCTION 1');
+        function testprime(n)
+        {
+            
+                for(var x =2; x<n;x++)
+                {
+                    if(n%x===0)
+                    {
+                        return ('not prime');
+                    }
+                }
+                return ('prime');
+            
+        }
+        console.log(testprime(37));
+        console.log('FUNCTION 2');
+        sub=function(n)
+        {
+            for(var a=2;a<n;a++)
+            {
+                if(n%a===0)
+                {
+                    return ('not prime');
+
+                }
+            }
+            return ('prime');
+
+        }
+        console.log(sub(4));
+(
+    function(n)
+    {
+      for(var x=2;x<n;x++)
+      {
+          if(n%x===0)
+          {
+            return ('not prime');
+
+          }
+      }
+      return ('prime');  
+    }
+)
+var n=(3);
+console.log("prime =",n);
+
+
+
+    console.log('FUNCTION 4');
+
+        var  div=(n)=> {
+                         for(var c=2;c<n;c++)
+                         {
+                             if(n%c===0)
+                             {
+                                return ('not prime');
+
+                             }
+                          }
+                          return ('prime');
+
+                         }
+                         console.log(div(3));
+
+    </script>
+    
+</body>
+</html>

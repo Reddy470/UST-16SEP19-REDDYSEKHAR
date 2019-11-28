@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+    <script>
+        var age = 22;
+        console.log('age = '+age);
+        var name='chota bheem';
+        console.log('name = '+name);
+        var hashobbies= true;
+        console.log('has hobbies='+hashobbies);
+    </script>
+</head>
+<body>
+    <script>
+        var fruits = ['orange','mango','apple','pineapple'];
+        console.log('fruits =',fruits);
+        console.log('frurit1 =',fruits[0]);
+        console.log('fruits length =',fruits.length);
+        var person =  {
+            firstName :'reddy',
+            lastName :'sekhar',
+            age :23,
+            phoneno : 9100169154,
+            getFullName :function(){
+                return this.firstName +' '+this.lastName
+            }
+        }
+        var lastName = person.lastName
+        console.log('lastName',lastName)
+        var personage =person.age;
+        console.log('age',personage);
+        var fullName  = person.getFullName();
+        console.log('fullName',fullName);
+    </script>
+    
+</body>
+</html>

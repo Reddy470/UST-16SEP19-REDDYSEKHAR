@@ -1,0 +1,14 @@
+package com.ustglobal.phonesimulation.util;
+
+import com.ustglobal.phonesimulation.dao.ContactDao;
+import com.ustglobal.phonesimulation.dao.ContactDaoImpl;
+
+public class ContactManger {
+	
+	public ContactManger() {}
+	
+	public ContactDao getContactDao() {
+		return new ContactDaoImpl();
+	}
+
+}

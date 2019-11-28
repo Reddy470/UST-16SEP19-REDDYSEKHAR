@@ -1,0 +1,32 @@
+public class Test5 {
+
+	class Bike {
+
+	void running() {
+
+	System.out.println("running");
+
+	}
+
+	}
+
+	public class Pulsor extends Bike {
+
+	void running() {
+
+	System.out.println("running at a safe speed of 50km/hr");
+
+	}
+	public void main(String[] args) {
+
+		Bike bike = new Pulsor();
+
+		bike.running();
+
+		}
+		}
+	}
+
+
+
+

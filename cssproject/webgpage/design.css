@@ -1,0 +1,86 @@
+#image
+{
+    
+    background-image: url("C:/Users/admin/Desktop/cssproject/image/purple-1319325__340.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+     background-position: 2px;
+     height: 400px;
+     padding: 40px;
+     
+
+}
+p,h1{
+    text-align: center;
+    padding: 30px;
+    color:solid black;
+    
+}
+input[type="search"]
+{
+    height: 30px;
+    width:800px;
+}
+td{
+    color: aliceblue;
+    text-align: left;
+}
+picture{
+    border:2px solid black;
+    width:230px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+ 
+}
+picture:hover
+{
+    transform: scale(1.1,1.1);
+}
+img{
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 10px; 
+    transition: all 2s;
+}
+img:hover{
+    transform: scale(1.1,1.1);
+}
+img:hover{
+    background-color: wheat;
+}
+#boot{
+    height: 40px;
+    background-color: green;
+    color:darkmagenta;
+    text-align: center;
+    border-radius: 20px;
+}
+#boot:hover{
+    transform:scale(1.2,1.2);
+    background-color: red;
+}
+#last{
+    color: brown;
+}
+#bottom{
+    color:darkgoldenrod;
+}
+footer{
+    background-color: wheat;
+    text-size: 30px;
+    
+ 
+}
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+
+public class Demo1 {
+	
+	
+		public void eat() {
+			System.out.println("eating");
+		}
+	
+		
+
+	
+	
+}
+
+
+class Test{
+	public static void main(String[] args) {
+		
+		Demo1 d = new Demo1();
+		d.eat();
+		Demo2  d2 = new Demo2();
+		d.eat();
+	}
+}

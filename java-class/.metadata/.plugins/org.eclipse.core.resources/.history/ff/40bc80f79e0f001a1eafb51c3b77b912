@@ -1,0 +1,68 @@
+package com.ustglobal.phonesimulation.dao;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Scanner;
+
+import com.ustglobal.phonesimulation.dto.ContactBean;
+
+public class ContactDaoImpl implements ContactDao {
+
+	@Override
+	public List<ContactBean> ContactDaoData() {
+		return null;
+	}
+
+	@Override
+	public ContactBean searchContactData(String name) throws IOException {
+		
+		 
+		    System.out.println("Please enter the name you would like to search for: ");
+		    Scanner kb = new Scanner(System.in);
+		    String name1 = kb.nextLine();
+
+		    List<String> lines = Files.readAllLines(Paths.get("leaders.txt"));
+		    for (String line : lines) {
+		        if (line.contains(name)) {
+		            System.out.println(line);
+		        }
+		    }
+			return null;
+	}
+
+
+	
+
+	@Override
+	public int AddContactData(ContactBean bean) {
+		Scanner scn = new Scanner(System.in);
+		String name1 = scn.next();
+		int number = scn.nextInt();
+		String groups = scn.next();
+	
+		ContactBean cb = new ContactBean(name1, number, groups)
+		return 0;
+		
+	}
+
+	@Override
+	public int editContactData(ContactBean bean) {
+		
+		
+		
+		
+		return 0;
+	}
+
+	@Override
+	public int deleteContactData(String name) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+
+}

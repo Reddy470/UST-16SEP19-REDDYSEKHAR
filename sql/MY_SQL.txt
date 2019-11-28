@@ -1,0 +1,424 @@
+
+-----------------------------------------------------------------
+                     DDL
+---------------------------------------------------------------
+
+------------------CREATE--------------DATABASE,TABLE---------------------------
+1.CREATE TABLE PRODUCT(PID INT,PANME VARCHAR(20),QUANTITY INT);
+2.SHOW TABLES;
+3.DESCRIBE PRODUCT;
+
+
+--------------------DROP---------------------------
+4.DROP DATABASE DB_NAME;(DROP STRUCTURE OF THE DATABASE);
+5.DROP TABLE TB_NAME;(DELETE STRUCTUR OF THE TABLE WHOLE DATA WILL BE DELETED);
+
+--------------------ALTER----------------------------
+i).ALTER TABLE PRODUCT ADD COLUMN PRICE INT;
+
+
+------------change existing coloumn name----------
+ii) ALTER TABLE PRODUCT CHANGE COLUMN PNAME PNAME VARCHAR(20);
+
+
+------------------DROP unwanted columns----------------
+iii)ALTER TABLE PRODUCT DROP PRICE;
+
+
+
+-------------------RENAME------table name-----------------
+iv)RENAME TABLE PRODUCT TO PRODUCTS;
+
+
+
+
+-----------------------------------------------------------------
+                     DML
+---------------------------------------------------------------
+i)INSERT
+	 i) insert into products(pid,pname,quantity,price)values(1,'rice',2,34);
+
+	 ii) INSERT INTO PRODUCTS VALUES(2,'PEN',3,'23);
+
+	iii)INSERT INTO PRODUCTS(PID,PNAME) VALUES(3,'METERIALS');
+
+
+------------------------insert multiple records at a time-------------------
+
+ INSERT INTO PRODUCTS(PID,PNAME,QUANTITY,PRICE) VALUES(6,'CHAIR',34,343),
+    -> (7,'BOOK',23,121),
+->(8,'pencil',12,2323);
+
+
+ii)----------------------UPDATE---------------------
+
+         UPDATE PRODUCTS SET PRICE=20;
+	
+         UPDATE PRODUCTS SET PRICE=NULL;
+
+
+iii)---------------------DELETE-------------------------
+
+DELETE FROM  PRODUCTS;         /*--------DELETE ENTIRE DATA FROM TBALE--------*/
+
+
+------------------DQL-----------------
+i)TRUNCATE PRODUCTS;       /*DELETE all rows form a table permanantly Cannot rollbacked*/
+
+
+
+
+
+
+i)DISTINCT:
+
+  SELECT DISTINCT DESIGNATION FROM EMPLOYEE;
+  SELECT DISTINCT bloodGROUP,DEPTNO FROM EMPLOYEE/*it will give both combination two columns distinct values*/
+
+ii)ALIAS:
+		 SELECT BLOODGROUP AS BGROUP FROM EMPLOYEE;
+ 		 SELECT BLOODGROUP BGROUP FROM EMPLOYEE;
+
+---------------------------------SQL CLAUSES---------------------------
+
+iii)WHERE: where condition used with SELECT,UPDATE,DELETE commands
+
+
+		 i)SELECT *FROM EMPLOYEE WHERE EID=3;
+                 ii)DELETE FROM EMPLOYEE WHERE EID=3;
+		 iii)UPDATE EMPLOYEE SET MOBILNO=13434 WHERE EID=3;
+
+
+----------------------------EXPRESSIONS----------------------------:
+
+ARITHMETIC OPERATORS:
+----------------------
+i) update employee set salary=salary+5000;
+ii) update employee set salary = salary+5000 where id=1
+
+
+1)WRITE A QUERY TO DISPLAY EMPLOYEE SALARY INCREMENTED BY 5000;
+    i)SELECT SALARY+5000 INCREMENT FROM EMPLOYEE;
+
+2)WRITE A QUERY TO DISPLAY EMPLOYEE SALARY DICREMENTED BY 5000;
+    ii)SELECT SALARY-5000 DICREMENT FROM EMPLOYEE;
+
+3)WRITE  A QUERY TO DISPLAY ANNUAL SALARY?
+   iii)SELECT SALARY*12 ANNUALSALARY FROM EMPLOYEE;
+
+4)WRITE A QUERY TO DISPLAY DAY SALARY?
+    iv))SELECT SALARY/30 DAYSALARY FROM EMPLOYE
+
+----------------------------------------------------------- 
+                 RELATIONAL OPERATOR
+-------------------------------------------------------------
+
+1)WRITE A QUERY TO DISPLAY THE RESULT FROM THE EMPLOYEE TABLE WHO'S JOB  DESIGNATION IS DEVELOPER?
+
+mysql> SELECT * FROM EMPLOYEE WHERE DESIGNATION ='DEVELOPER';
++-----+------+---------+------------+------+------------+------------+--------+--------+-------------+--------+-------------+
+| EID | NAME | MOBILNO | DOB        | AGE  | DOJ        | BLOODGROUP | DEPTNO | SALARY | EMAIL       | GENDER | DESIGNATION |
++-----+------+---------+------------+------+------------+------------+--------+--------+-------------+--------+-------------+
+|   1 | HARI |   12121 | 1998-12-10 |   21 | 2009-12-12 | B+         |     10 |  17122 | a@gamil.com | M      | DEVELOPER   |
++-----+------+---------+------------+------+------------+------------+--------+--------+-------------+--------+-------------+
+
+2)WRITE A QUERY TO DISPLAY ALL THE RECORDS OF THE EMPLOYEE EXCLUDING WHO'S DEPATRNO WORKING 20 ?
+
+  >SELECT *FROM EMPLOYEE WHERE DEPTNO!=20;
+
+3)WRITE A QUERY TO DISPLAY THE RECORD OF THE EMPLOYEE WHO'S SALARY GREATER THAN 10000?
+   >SELECT *FROM EMPLOYEE WHERE SALARY >10000;
+
+4)WRITE A QUERY TO DISPLAY THE EMPLOYEE WHO'S AGE IS LESSTHAN 30?
+    >SELECT *FROM EMPLOYEE WHERE AGE<30;
+
+5)WRITE A QUERY TO DISPLAY NAME,SALARY EMAILID,MOBILENO WHOS AGE IS 18 OR GREATER THAN 18?
+
+    >SELECT NAME,SALARY EMAIL,MOBILNO FROM EMPLOYEE WHERE AGE>=18;
+
+
+6)WRITE A QUERY TO DISPLAY  WHO'S SALARY LESSTHAN OR EQUAL TO 4000?
+   >SELECT *FROM EMPLOYEE WHERE SALARY <=4000;
+
+
+---------------------------------------------------------------------------------
+		                LOGICAL OPERATORS
+---------------------------------------------------------------------------------
+AND:
+		 i)if the first conditin true go to next condition
+       		 ii)if the first condition flase it won't check second condition;
+OR:
+ 
+NOT: T=F
+
+     F=T
+
+-------------------
+AND
+-------------------    
+1)WRITE A QUERY TO DISPLAY ALL THE EMPLOYEE DETAILS WHO IS WORKING DEPARTMENT NUMBER 20 AS WELL AS SALARY >25000;
+ Ans: SELECT *FROM EMPLOYEE WHERE DEPTNO =20 AND SALARY>25000;
+
+2) Write a qury to display name,salary from the employee whois working deptno=10 and 20 ?
+
+    SELECT NAME, SALARY FROM EMPLOYEE WHERE DEPTNO =10 AND DEPTNO=20;
+
+3. WRITE A QUERY TO DISPLAY EMPLOYEE DETAILS WHO'S DESIGNATION TESTER AND AGE IS 25?
+     SELECT *FROM  EMPLOYEE WHERE DESIGNATION='TESTER' AND AGE=25;
+---------------------------
+OR:
+------------------------------
+
+1.WRITE A QUERY  TO DISPLAY ALL THE RECORD OF THE EMPLOYEES WHO'S WORKING AS A TESTER OR SALARY MORTHAN 40000?
+
+       SELECT *FROM EMPLOYEE WHERE DESIGNATION='TESTER' OR SALARY>40000;
+
+2.WRITE A QUERY TO DISPLAY NAME,SALARY,AGE FORM THE TABLE WHOIS WORKING DEPARTNO 10 OR 40 OR 50;
+
+       SELECT NAME,SALARY,AGE FROM EMPLOYEE WHERE DEPTNO=10 OR DEPTNO=40 OR DEPTNO =50;
+
+3..WRITE A QUERY TO DISPLAY EMPLOYEE DETAILS WHO'S AGE IS MORETHAN 25 AND BLOODGROUP IS B+?
+
+       SELECT *FROM EMPLOYEE WHERE AGE>25 AND BLOODGROUP='B+';
+
+---------------------------
+NOT
+--------------------------
+
+4.WRITE A QUERY TO DISPLAY EMPLOYEE ALL THE RECORDS OF THE EMPLOYEES EXCLUDING TESTER ?
+     
+                  SELECT *FROM EMPLOYEE WHERE NOT DESIGNATION = 'TESTER';
+                      OR
+                  SELECT *FROM EMPLOYEE WHERE  DESIGNATION != 'TESTER';
+
+5.WRITE A QUERY TO DISPLAY NAME OF THE ALL EMPLOYEE WHO'S WORKKING AS A HR OR TESTER AND SALARY>40000 
+ SELECT NAME FROM EMPLOYEE WHERE  DESIGNATION  = 'HR' OR DESIGNATION= 'TESTER' AND SALARY>40000;
+
+6.WRITE A QUERY TO DISPLAY ALL THE EMPLOYEE EXCLUDING SOFTWARE DEVELOPER WHO'S WORKING DEPTNO 40;
+       
+                     SELECT  *FROM EMPLOYEE WHERE NOT (DESIGNATION = 'DEVELOPER' AND  DEPTNO=40);
+
+
+
+7.WRITE A QUERY TO DISPLAY TO DISPLAY THE SOFTWAREDEVELOPER WHO ARE WORKING IN DEPTNO 10 OR 40;
+
+                SELECT  *FROM EMPLOYEE WHERE DESIGNATION='SOFTWAREDEVELOPER' OR  DEPTNO =10 OR DEPTNO =40;
+
+
+====================================================================================
+                                     SPECIAL OPERATOR
+==========================================================================================
+
+                  ---------------1.IN-----------------:
+
+1.WRITE A QUERY TO DISPLAY ALL THE DETAIL OF TEH EMPLOYEE WHO'S WORKING IN DEPT NO 40,50,70?
+
+	SELECT *FROM EMPLOYEE WHERE DEPTNO IN(40,50,70);
+
+2.WRITE A QUERY TO DISPLAY NAME OF THE ALL EMPLOYEE WHOS WORKING AS A TESTE,HR,ADMIN?
+
+    SELECT *FROM  EMPLOYEE WHERE DESIGNATION IN ('TESTER','HR','ADMIN');
+
+3.WRITE A QUERY TO DISPLAY THE DETAIL OF TESTER ADIMIN SOFTWAREDEVELOPER WHO ARE  WORKING WITH DEPTNO 20 OR 30 AND SALARY>40000?
+
+ SELECT *FROM EMPLOYEE WHERE DESIGNATION IN('TESTER','ADMIN','SOFTWAREDEVELOPER') AND DEPTNO IN(10,20) AND  SALARY>4000;
+
+                         
+  ---------------------------------2.NOTIN-------------------------------
+
+1..WRITE A QUERY TO DISPLAY ALL THE RECORD OF THE EMPLOYEE EXCLUDING WHO'S WORKING AS TESTER,ADMIN,HR;
+
+    SELECT *FROM EMPLOYEE WHERE DESIGNATION NOT IN('TESTER','HR','ADMIN');
+
+2.WRITE A QUERY TO DISPLAY ALL THE RECORD  OF THE EMPLOYEE WHO'S AGE IS 20,25,30,40 EXCLUDE ALL THE DETAIL OF TESTER AND SOFTWAREDEVELOPER?
+
+            SELECT *FROM EMPLOYEE WHERE AGE IN(21,25,30,40) AND DESIGNATI  ON NOT IN('TESETR','SOFTWAREDEVELOPER');
+
+
+-----------------------------------3.BETWEEN----------------------  
+
+1.WRITE A QUERY TO DISPLAY ALL THE DETAL OF  THE EMPLOYEE WHO'S AGE BETWEEN 22 AND 40?
+
+             SELECT *FROM EMPLOYEE WHERE AGE  BETWEEN 22 AND 40;
+
+2..WRITE A QUERY TO DISPLAY ALL DETAILS OF EMPLOYEE  WHO ARE  HIRED 2017?
+
+                 SELECT *FROM EMPLOYEE WHERE DOJ BETWEEN '2017-01-01' AND '2017-12-31';
+
+3.WRITE A QUERY TO DISPLAY ALL THE RECORD OF THE EMPLOYEE EXCLUDING WHO'S SALARY IS RANGE OF 25K TO 30K?
+
+         SELECT *FROM EMPLOYEE WHERE SALARY NOT  BETWEEN 25000 AND 30000;
+
+
+
+------------------------------4.IS------------------------------------------------------
+SELECT *FROM EMPLOYEE WHERE DOJ IS NULL;
+
+
+
+----------------------------5.LIKE(%)---------------------------------------------------
+
+1.WRITE A QUERY TO DISPLAY ALL THE EMPLYEE OF THE RECORD WHO'S NAME STARTS WITH A ?
+           SELECT *fROM EMPLOYEE WHERE NAME LIKE 'A%';
+
+2.WRITE A QUERY TO DISPLAY NAME OF THE EMPLOYEE WHO'S SECOND CHARACTER IS  I?
+     
+                  SELECT *fROM EMPLOYEE WHERE NAME LIKE '_i%
+
+3. WRITE A QUERY TO DISPLAY THE NAME OF THE EMPLOYEE WHICH HAS ATLEAST TWO LL IN THEIR NAME?
+
+                    SELECT *FROM EMPLOYEE WHERE NAME LIKE '%L%L%';
+
+4. WRITE A QUERY TO DISPLAY  NAME OF THE EMPLOYEE WHO'S NAME STARTS WITH 'H' AND ENDS WITH 'P'?
+
+                    SELECT *FROM EMPLOYEE WHERE NAME LIKE 'H%H';
+
+5.WRITE A QUERY TO DISPLAY ALL THE RECORD OF THE EMPLOYEE IF THE EMPLOYEE NAME BEGIN WITH H OR R?
+
+                SELECT *FROM EMPLOYEE WHERE NAME LIKE 'H%' OR NAME LIKE 'R%';
+
+6.WRITE A QUERY TO DISPLAY EMLOYEE NAME SALRY WHO'S WORKING DEPTNO 10,20,30, AND JOB DESIGNATION STATRTS WITH D?
+
+           SELECT NAME,SALARY FROM EMPLOYEE WHERE DEPTNO IN(10,20,30,40) AND DESIGNATION LIKE 'D%';
+ 		
+           SELECT * FROM EMPLOYEE WHERE DEPTNO IN(10,20,30,40) AND DESIGNATION LIKE 'D%';
+
+
+----------------------------------------------------------------------------------------------------------------
+			AGGREGATE FUNCTIONS
+----------------------------------------------------------------------------------------------------------------
+
+1.MIN,MAX,COUNT,AVG,SUM
+
+1.SELECT SUM(SALARY) FROM EMPLOYEE;
+2.SELECT COUNT(*) FROM EMPLOYEE;
+3.SELECT MAX(SALARY) FROM EMPLOYEE;
+4.SELECT MIN(SALARY) FROM EMPLOYEE;
+5.SELECT AVG(SALARY) FROM EMPLOYEE;
+
+
+
+
+-------------------------------------------------------------
+1.ORDERY BY:BY DEFAULT IT IS A ASCENDING ORDER
+-------------------------------------------------------------
+       
+1.WRITE A QUERY TO DISPLAY ALL RESULT OF THE EMPLOYEE AND SALARY SHOULD BE DESC?
+    
+            SELECT *FROM EMPLOYEE ORDER BY SALARY DESC;
+
+---------------------------------------------------------------
+2.GROUP BY
+---------------------------------------------------------------
+
+
+1.WRITE A QUERY TO DISPLAY TO DISPLAY THE MAXIMUM SALARY IN EACH DEPARTMENT?
+
+ >>SELECT MAX(SALARY) FROM EMPLOYEE GROUP BY(DEPTNO);
+
+2.WRITE  A QUERY DISPLAY THE  HEIGHEST SALRY GIVEN TO HR FOR EACH DEPARTMENT ?
+
+	
+
+3.WRITE A QUERY TO DISPLAY DEPATNUM WHICH HAS ATLEAST  TWO EMPLOYEES WORKING?
+
+
+
+===================================================================================================
+                                             SUBQUERY: 1)SINGLE ROW SUBQUERY 2).MULTIROW SUBQUERY
+==================================================================================================
+
+---------------------------------------SINGLE ROW SUB QUERY---------------------------------------
+
+1).WRITE A QUERY TO  DISPLAY ALL THE RECORD OF THE EMPLOYEE WHO'S DATE OF JOINING IS SAME AS HARI DATE?
+
+             SELECT doj FROM EMPLOYEE WHERE DOJ =(SELECT DOJ FROM EMPLOYEE WHERE NAME ='HARI');
+
+		i).first we have to  find inner query
+		ii)the innerquery output will take input as a outerquery.
+ 
+2).WRITE A QUERY  TO DISPLAY THE SECOND MAXIMUM SALARY?
+              SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY<(SELECT MAX(SALARY) FROM EMPLOYEE) ;
+
+
+
+--------------------------------------MULTIROW SUBQUERY-----------------------------------------------
+
+1)WRITE A QUERY TO DISPLAY NAME OF THE EMPLOYEE WHO'S WORKING IN LOCATION WHICH HAS ATLEAST ONE A IN LOCATION ?
+
+     SELECT NAME FROM EMPLOYEE WHERE  DEPTNO  IN(SELECT DEPTNO FROM DEPARTMENT WHERE LOCATION LIKE '%A%');
+
+
+2)WRITE A QUERY TO DISPLAY ALL THE RECORD OF THE EMPLOYEE WHO IS WORKING IN ADMIN OPERATIONS DEVELOPERS?
+
+ SELECT *FROM EMPLOYEE WHERE DEPTNO IN(SELECT DEPTNO FROM DEPARTMENT WHERE DEPTNAME IN('ADMIN','OPERATIONS','DEVELOPMENT'));
+
+
+
+
+
+==========================================================================================
+                           TCL
+=========================================================================================
+1.ROLLACK
+2.COMMIT
+3.SAVEPOINT
+
+
+ROLLBACK:ROLLBACK IS USED TO RESTORE THE DATA (INITIALLY SET: SET AUTOCOMMIT=0(FALSE))
+
+ >SELECT *FROM PRODUCTS;
+ > UPDATE PRODUCTS SET QUANTITY=12;
+ >ROLLBACK;
+
+COMMIT: PERMANENTLY SAVES. ONCE COMMIT WE CANNOT ROLLBACK
+
+COMMIT;
+
+SAVEPOINT:
+
+		SAVEPOINT NAME;
+
+ ROLLBACK TO A;
+
+
+
+============================================================================================
+			                  JOINS
+==========================================================================================
+
+---------------------------------------1.CROSS JOIN OR CARTESIAN JOIN------------------------------------
+
+1.RECORD FROM THE FIRST TABLE MERGE WITH ALL RECORDS OF THE SECOND TABLE
+
+
+SELECT *FROM  TB1_NAME CROSS JOIN TABLE_NAME2;
+
+  QUERY: SELECT *FROM EMPLOYEE CROSS JOIN DEPARTMENT;
+
+-------------------------------------------2.INNER JOIN-------------------------------------------------
+
+ SELECT *FROM EMPLOYEE E INNER JOIN  DEPARTMENT D ON E.DEPTNO=D.DEPTNO;
+
+---------------------------------------------3LEFT OUTERJOIN------------------------------------------------
+
+SELECT *fROM EMPLOYEE E LEFT OUTER JOIN  DEPARTMENT D ON E.DEPTNO = D.DEPTNO;
+
+
+
+----------------------------------------------4.RIGHT OUTER JOIN----------------------------------
+
+SELECT *fROM EMPLOYEE E RIGHT OUTER JOIN  DEPARTMENT D ON E.DEPTNO = D.DEPTNO;
+
+
+-----------------------------------------------5.FULL OUTER JOIN----------------------------
+
+
+
+
+
+--------------------------------------------INNER JOIN------------------------------------------------------
+
+
+
+

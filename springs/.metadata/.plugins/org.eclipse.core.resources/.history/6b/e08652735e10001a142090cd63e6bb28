@@ -1,0 +1,12 @@
+package com.ustglobal.springcore;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.ustglobal.springcore.di.Author;
+
+public class AuthorAnnotation {
+	
+	ApplicationContext context = new AnnotationConfigApplicationContext(Author.class);
+
+}

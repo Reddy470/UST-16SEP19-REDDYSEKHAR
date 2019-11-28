@@ -1,0 +1,45 @@
+package com.ustglobal.phonesimulation.dto;
+
+public class ContactBean {
+	
+	public String name;
+	public  long number;
+	public  String groups;
+	
+	
+	
+
+
+	public ContactBean(String name, long number, String groups) {
+		super();
+		this.name = name;
+		this.number = number;
+		this.groups = groups;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "ContactBean [name=" + name + ", number=" + number + ", groups=" + groups + "]";
+	}
+
+
+
+	public void set(String next) {
+   System.out.println("update successfully");		
+	}
+
+
+
+
+
+
+	
+
+
+
+	
+	
+
+}

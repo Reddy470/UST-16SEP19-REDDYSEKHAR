@@ -1,0 +1,9 @@
+<div>
+    <input type="search" name="search" id="input" placeholder="Search" class="form-control" style="width:400px; height: 40px; margin: 0 0 30px 500px;"(input)="cFun($event)" value="" required="search" title="">
+</div>
+<div class="row">
+    <div class="col-md-4 card card-body" *ngFor ="let new of searchNews">
+            <h4>{{new.Title}}</h4>
+        <a href="{{new.url}}"><img src="{{new.urlToImage}}" alt=""></a>
+    </div>
+</div>

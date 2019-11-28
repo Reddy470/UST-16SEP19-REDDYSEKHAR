@@ -1,0 +1,7 @@
+
+public class Demo2 {
+	public void eat() {
+		System.out.println("cracking");
+	}
+
+}

@@ -1,0 +1,20 @@
+public class Test5 {
+
+public static int sum(int... x) {
+
+return 1;
+
+}
+
+static void main(String args[]) {
+
+sum(10); sum(10, 20);
+
+sum(10, 20, 30);
+
+sum(10, 20, 30, 40);
+
+}
+
+}
+

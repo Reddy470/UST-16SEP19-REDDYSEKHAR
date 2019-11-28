@@ -1,0 +1,70 @@
+package com.ustglobal.phonesimulation.dao;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.ustglobal.phonesimulation.dto.ContactBean;
+
+public class ContactDaoImpl implements ContactDao {
+
+	@Override
+	public List<ContactBean> ContactDaoData() {
+		return null;
+	}
+
+	@Override
+	public ContactBean searchContactData(int number) {
+		
+		    int  n, search, array[];  
+		   
+		    Scanner in = new Scanner(System.in);  
+		    System.out.println("Enter number ");  
+		    n = in.nextInt();   
+		    array = new int[number];  
+		   
+		    System.out.println("Enter those " + n + " elements");  
+		   
+		    for (n = 0; n < n; n++)  
+		      array[n] = in.nextInt();  
+		   
+		    System.out.println("Enter value to find");  
+		    search = in.nextInt();  
+		   
+		    for (n = 0; n < n; n++)  
+		    {  
+		      if (array[n] == search)     /* Searching element is present */  
+		      {  
+		         System.out.println(search + " is present at location " + (n + 1) + ".");  
+		          break;  
+		      }  
+		   }  
+		   if (n == n)  /* Element to search isn't present */  
+		      System.out.println(search + " isn't present in array.");  
+		return null;
+	}
+
+	@Override
+	public int AddContactData(ContactBean bean) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int editContactData(ContactBean bean) {
+		
+		
+		
+		
+		return 0;
+	}
+
+	@Override
+	public int deleteContactData(String name) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+
+}
