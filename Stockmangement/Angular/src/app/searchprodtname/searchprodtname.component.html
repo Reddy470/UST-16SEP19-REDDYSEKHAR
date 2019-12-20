@@ -1,0 +1,35 @@
+
+<<div class="input-group" style="margin: 0 0 15px 450px;">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Search</span>
+        
+    </div>
+    <input (input)="getEnt($event)" type="search" name="search" id="search" style="width: 400px; height: 50px;">
+</div>
+
+
+  
+  <table class="table table-border table-striped table-light col-md-8 offset-2">
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Category</th>
+            <th>Company</th>
+            <th>Quantity</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let product_info of product' >
+            <td>{{product_info.product_id}}</td>
+            <td>{{product_info.name}}</td>
+            <td>{{product_info.catogory}}</td>
+            <td>{{product_info.company}}</td>
+            <td>{{product_info.quantity}}</td>
+            <td>{{product_info.price}}</td>
+           
+           </tr>
+       </tbody>
+   </table>
+  

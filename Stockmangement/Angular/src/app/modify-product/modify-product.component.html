@@ -1,0 +1,118 @@
+
+<form action="" method="GET" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="productsData(form)">
+    <h1 class="text-center bg-success text-white">ProductsData</h1>
+    <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">GetProductsData</button>
+        </div>
+</form >
+
+
+<table class="table table-border table-striped table-primary col-md-8 offset-2">
+    <thead>
+        <tr>
+          <th>ProductId</th>
+          <th>ProductName</th>
+          <th>Category</th>
+          <th>Company</th>
+          <th>Quantity</th>
+          <th>price</th>
+          <th>Update</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.product_id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.catogory}}</td>
+            <td>{{product.company}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+           
+            <td>
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="selectUser(product)">
+    Update
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">UpDateproduct</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf ="selectedUser">
+            <form action="" class="" #form="ngForm"(ngSubmit)="UpdateData(form)">
+                <h1 class="text-center bg-info text-white">Update</h1>
+                <input type="hidden" name="product_id" #product_id="ngModel" ngModel [(ngModel)] ="selectedUser.product_id">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" #name='ngModel'maxlength="20" pattern="[A-Za-z]{1,20}"  required
+                     ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name....">
+                    <div *ngIf="name.invalid && name.touched">
+                      <p *ngIf="name.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="name.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Category</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" maxlength="20" pattern="[A-Za-z]{1,20}" value="'.$_SESSION['user_name'].'" required
+                       placeholder="Entercategory..." name="catogory" #catogory='ngModel' ngModel>
+                    <div *ngIf="catogory.invalid && catogory.touched">
+                      <p *ngIf="catogory.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="catogory.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+                    </div>
+                  
+                  </div>
+          
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Company</label>
+                      <input type="text" name="company" #company='ngModel'maxlength="20" pattern="[A-Za-z]{1,20}"  required
+                       ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name....">
+                      <div *ngIf="company.invalid && company.touched">
+                        <p *ngIf="company.errors.required" class="text-danger">*This field is mandatory
+                          <p *ngIf="company.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+                      </div>
+                    </div>
+          
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Quantity</label>
+                      <input type="number" class="form-control" id="quantity" required pattern="[1-20]" placeholder="Enterprice..." name="quantity" #quantity='ngModel' ngModel>
+              
+                      <div *ngIf="quantity.invalid && quantity.touched">
+                        <p *ngIf="quantity.errors.required" class="text-danger">*This field is mandatory
+                          <p *ngIf="quantity.errors.pattern" class="text-danger">*input field that contain minimum 1 and maximum 20
+                      </div>
+                    </div>
+                  <div class="form-group">
+                          <label for="exampleInputPassword1">Price</label>
+                          <input type="number" class="form-control" id="Price" required pattern="[1-6]" placeholder="Enterprice..." name="price" #price='ngModel' ngModel>
+                  
+                          <div *ngIf="price.invalid && price.touched">
+                            <p *ngIf="price.errors.required" class="text-danger">*This field is mandatory
+                              <p *ngIf="price.errors.pattern" class="text-danger">*input field that contain minimum 1 and maximum 6
+           
+                          </div>
+                  
+                  
+                        </div>
+            <div class="form-group">
+                <button type="submit" class="btn-outline-success float-right">Update</button>
+            </div>
+            
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+            </td>
+           
+        </tr>
+    </tbody>
+</table>
+
