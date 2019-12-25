@@ -1,0 +1,55 @@
+
+
+<div class="col-md-4 mt-4 offset-4">
+    <div class="span3 well">
+        <a href="" data-toggle="modal" data-target="#myModal"><img src="https://cdn.pixabay.com/photo/2016/05/18/11/25/library-1400313__340.jpg" name="aboutme" width="540" height="370" class="img-circle"></a>
+        <h5 class="text-center" style="color:lightseagreen">WELCOME TO Library {{details.name}}</h5>
+        <h5 class="text-center" style="color:lightseagreen">UserId::{{details.sno}}</h5>
+        <h6 class="text-center" style="color:lightseagreen">LIBRARIAN::click On Image<h6>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            
+                 
+                <div class="modal-body">
+                    <img src="https://cdn.pixabay.com/photo/2018/01/08/08/35/literature-3068940__340.jpg" name="aboutme" width="240" height="240" border="0" class="img-circle">
+                    <h3 class="media-heading">{{details.name}}</h3>
+                    <span>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/add">AddBook</button>
+                    <span>::Plase Click On Add Book</span>    
+                </span><br>
+                    <br>
+                    <span>
+                        
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/update">Display-Book</button>
+                        <span>::Plase Click On UpDateBook</span>
+                    </span><br>
+                    <br>
+
+                    <span>
+                        
+        <button type="button" class="btn btn-danger" data-dismiss="modal" routerLink="/delete">Delete-Student</button>
+         <span>::Plase Click On DeleteStudent</span>
+            </span><br>
+            <br>
+
+            <span>        
+                <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/get">Update-book</button>
+                <span>::Plase Click On DisplayBook</span>
+            </span><br>
+            <br>
+
+    
+                            <h4>Note::</h4>
+                            <p>Librariyan ,What are the Option You choosed and do operations Will affect the Database</p>
+                  
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

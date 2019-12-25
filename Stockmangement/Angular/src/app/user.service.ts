@@ -28,8 +28,8 @@ export class UserService {
     return this.http.put('http://localhost:8080/update',data);
   }
 
-  searchProduct() {
-   return this.http.get(`${'http://localhost:8080/search'}/${name}`);
+  searchProduct(name) {
+   return this.http.get(`http://localhost:8080/search?name=${name}`);
 
   }
 

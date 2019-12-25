@@ -1,0 +1,56 @@
+<div class="col-md-4 mt-5 card card-body offset-4">
+    <form #form="ngForm" (ngSubmit) = 'login(form)' method="PUT">
+        <h4 class="text-center">AddBooks</h4>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">BookName</label>
+          <input type="text" name="bname" #bname='ngModel'maxlength="20" pattern="[A-Za-z]{1,20}" value="'.$_SESSION['user_name'].'" required
+           ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+          <div *ngIf="bname.invalid && bname.touched">
+            <p *ngIf="bname.errors.required" class="text-danger">*This field is mandatory
+              <p *ngIf="bname.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">AuthorName</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" maxlength="20" pattern="[A-Za-z]{1,20}" value="'.$_SESSION['user_name'].'" required
+             placeholder="EnterAuthorName..." name="authour" #authour='ngModel' ngModel>
+          <div *ngIf="authour.invalid && authour.touched">
+            <p *ngIf="authour.errors.required" class="text-danger">*This field is mandatory
+              <p *ngIf="authour.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+          </div>
+        
+        </div>
+
+        <div class="form-group">
+                <label for="exampleInputPassword1">Price</label>
+                <input type="number" class="form-control" id="Price" required pattern="[1-4]" placeholder="Enterprice..." name="price" #price='ngModel' ngModel>
+        
+                <div *ngIf="price.invalid && price.touched">
+                  <p *ngIf="price.errors.required" class="text-danger">*This field is mandatory
+                    <p *ngIf="price.errors.pattern" class="text-danger">*input field that contain minimum 1 and maximum 4
+ 
+                </div>
+        
+        
+              </div>
+
+        <div class="form-group">
+                <label for="exampleInputPassword1">DateOfEntry</label>
+                <input   type="date" class="form-control" required id="date" placeholder="EnterAuthorName..." name="DOE" #DOE='ngModel' ngModel>
+                <div *ngIf="DOE.invalid && DOE.touched">
+                  <p *ngIf="DOE.errors.required" class="text-danger">*This field is mandatory
+                    
+                </div>
+              
+              
+              </div>
+
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    
+           
+    
+      </form>
+      </div>

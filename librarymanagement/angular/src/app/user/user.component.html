@@ -1,0 +1,40 @@
+
+
+<div class="col-md-4 mt-4 offset-4">
+    <div class="span3 well">
+        <a href="" data-toggle="modal" data-target="#myModal"><img src="https://cdn.pixabay.com/photo/2015/06/02/12/59/narrative-794978__340.jpg" name="aboutme" width="500" height="400" class="img-round"></a>
+        <h5 class="text-center" style="color:lightseagreen">WELCOME TO Library {{details.name}}</h5>
+        <h5 class="text-center" style="color:lightseagreen">UserId::{{details.sno}}</h5>
+        <h6 class="text-center" style="color:lightseagreen">Student::click On Image<h6>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            
+                 
+                <div class="modal-body">
+                    <img src="https://cdn.pixabay.com/photo/2017/12/25/19/18/girl-3038974__340.jpg" name="aboutme" width="240" height="240" border="0" class="img-round">
+                    <h3 class="media-heading">{{details.name}} <small>student</small></h3>
+                    <span>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/search">SearchBook</button>
+                    <span>::Plase Click On Search Book</span>    
+                </span><br>
+                    <br>
+                    <span>
+                        
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/reqlist">RequestBooks</button>
+                        <span>::Plase Click On DisplayBooks </span>
+                    </span><br>
+                    <br>
+                     <h4>Note::</h4>
+                    <p>Librariyan ,What are the Option You choosed and do operations Will affect the Database</p>
+                  
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

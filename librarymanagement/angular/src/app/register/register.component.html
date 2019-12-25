@@ -1,0 +1,80 @@
+<div class="col-md-4 mt-5 card card-body offset-4">
+<form  #form="ngForm" (ngSubmit)='register(form)' method="POST">
+	<h2 class="text-center">Registration</h2><br>
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="name"  placeholder="enter name" #name='ngModel' ngModel class="form-control" maxlength="20" pattern="[A-Za-z]{1,20}" value="'.$_SESSION['user_name'].'" required><br>
+		<br><div *ngIf="name.invalid && name.touched">
+            <p *ngIf="name.errors.required" class="text-danger">*This field is mandatory
+              <p *ngIf="name.errors.pattern" class="text-danger">*input field that can contain  letters (no numbers or special characters)
+
+          </div>
+	</div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="email" #email='ngModel' ngModel class="form-control" required minlength="4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email address" type="email">
+		<br><div *ngIf="email.invalid && email.touched">
+            <!-- <p *ngIf="email.errors.required" class="text-danger">*This field is mandatory -->
+              <p *ngIf="email.errors.pattern" class="text-danger">*characters followed by an @ sign, followed by more characters, and then a "."
+
+				After the "." sign, add at least 2 letters from a to z:
+          </div>
+	
+	
+	</div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		</select>
+    	<input name="phNo" #phNo='ngModel' required pattern="[789][0-9]{9}" ngModel class="form-control" placeholder="Phone number" type="text">
+	
+		<div *ngIf="phNo.invalid && phNo.touched">
+            <p *ngIf="phNo.errors.required" class="text-danger">*This field is mandatory
+				<p *ngIf="phNo.errors.pattern" class="text-danger">*Phone numbers from India are 10 digits long, and start with 7, 8, or 9.
+
+          </div>
+	
+	</div> <!-- form-group// -->
+    <div class="form-group input-group" placeholder="Please Select Usertype......"   >
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control" required name="type"  #type='ngModel' ngModel >
+			<option selected=""> Select User type</option>
+			<option value="user">User</option>
+			<option value="lib">Librarian</option>
+			
+			<div *ngIf="type.invalid && type.touched">
+				<p *ngIf="type.errors.required" class="text-danger">*This field is mandatory
+  
+			  </div>
+		</select>
+	</div> <!-- form-group end.// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input class="form-control" placeholder="Create password" required type="password" name="pwd" #pwd='ngModel' ngModel
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
+		<div *ngIf="pwd.invalid && pwd.touched">
+            <p *ngIf="pwd.errors.required" class="text-danger">*This field is mandatory
+              <p *ngIf="pwd.errors.pattern" class="text-danger">*Must contain at least one number and one uppercase and lowercase letter, 
+				  and at least 8 or more characters
+          </div> 
+	
+	</div> <!-- form-group// -->
+    <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a routerLink="/login">Log In</a> </p>                                                                 
+</form>
+</div>
+

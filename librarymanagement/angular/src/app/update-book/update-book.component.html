@@ -1,0 +1,29 @@
+
+<form action="" method="GET" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="booksData(form)">
+  <h1 class="text-center bg-success text-white">BooksData</h1>
+  <div class="form-group">
+          <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">GetBooksData</button>
+      </div>
+</form >
+
+
+<table class="table table-border table-striped table-info col-md-8 offset-2">
+  <thead>
+      <tr>
+        <th>BookId</th>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>price</th>
+        <th>Date</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let book of books">
+          <td>{{book.bid}}</td>
+          <td>{{book.bname}}</td>
+          <td>{{book.authour}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.DOE}}</td>
+         </tr>
+     </tbody>
+ </table>

@@ -1,13 +1,12 @@
-<<div class="input-group" style="margin: 0 0 15px 450px;">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Search</span>
-        
-    </div>
-    <input (input)="getEnt($event)" type="search" name="search" id="search" style="width: 500px; height: 50px;">
-</div>
 
-
-
+<form action="" method="GET" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="booksData(form)">
+    <input type="search" name="search" id="search" class="form-control" placeholder="Search by name" [(ngModel)]='search'>
+    <!-- <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">search</button>
+        </div> -->
+  </form >
+  <br>
+  <br>
   
   
   <table class="table table-border table-striped table-light col-md-8 offset-2">
@@ -22,14 +21,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let products of product' >
-            <td>{{products.product_id}}</td>
-            <td>{{products.name}}</td>
-            <td>{{products.catogory}}</td>
-            <td>{{products.company}}</td>
-            <td>{{products.quantity}}</td>
-            <td>{{products.price}}</td>
-           
+        <tr *ngFor='let stocks of product | filter: search' >
+            <td>{{stocks.product_id}}</td>
+            <td>{{stocks.name}}</td>
+            <td>{{stocks.catogory}}</td>
+            <td>{{stocks.company}}</td>
+            <td>{{stocks.quantity}}</td>
+            <td>{{stocks.price}}</td>
            </tr>
        </tbody>
    </table>

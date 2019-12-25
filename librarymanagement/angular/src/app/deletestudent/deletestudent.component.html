@@ -1,0 +1,37 @@
+
+<form action="" method="GET" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="booksData(form)">
+    <h1 class="text-center bg-success text-white">Details</h1>
+    <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">GetDetails</button>
+        </div>
+</form >
+
+
+<table class="table table-border table-striped table-primary col-md-8 offset-2">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>PhoneNum</th>
+          <th>Type</th>
+          
+          <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.sno}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.email}}</td>
+            <td>{{book.phNo}}</td>
+            <td>{{book.type}}</td>
+            <td>
+                <!-- Button trigger modal -->
+                <button (click)= "deleteData(book)"  type="button" class="btn btn-outline-danger">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+  
+ 
